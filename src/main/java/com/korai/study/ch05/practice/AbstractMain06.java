@@ -41,12 +41,12 @@ abstract class RemoteControl implements Sensor {
         System.out.println(modelName);
     }
 
-    abstract void powerOn();
+    abstract void powerOn();  // 추상 메서드
 
 }
 
 class TvRemoteControl extends RemoteControl {
-    @Override
+    @Override  // 추상클래스와 추상클래스간 상속 가능 , 생성은 못함
     void powerOn() {
         System.out.println("TV 회로에 맞게 전원 공급");
     }
