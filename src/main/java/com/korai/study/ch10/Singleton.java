@@ -4,8 +4,8 @@ public class Singleton {
     public static void main(String[] args) {
         StudentService studentService = StudentService.getInstance() ; // private StudentService 때문에 생성 불가
         StudentService studentService2 = StudentService.getInstance() ;
-        StudentService.기능1();
-        StudentService.기능2();
+        studentService.기능1();
+        studentService.기능2();
     }
 }
 
@@ -19,7 +19,7 @@ class StudentService {
         if (instance == null) {
             instance = new StudentService();
         }
-        return instance();
+        return instance;
 
     }
         public void 기능1() {
