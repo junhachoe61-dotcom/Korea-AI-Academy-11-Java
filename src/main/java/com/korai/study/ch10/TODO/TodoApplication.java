@@ -16,7 +16,7 @@ public class TodoApplication {
         RootRouter.setUp();
 
         while(true) {
-            RootRouter.getCurrentView().show();
+            RootRouter.getCurrentView().show();  // 현재화면 가져오기 current는 login으로 설정
         }
     }
 }
