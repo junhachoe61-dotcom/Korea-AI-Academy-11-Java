@@ -5,45 +5,36 @@ import java.util.Scanner;
 
 public class ScannerMain04 {
     public static void main(String[] args) {
-        int[] nums = new int[] { 10, 20, 50, 30, 80};
         Scanner scanner = new Scanner(System.in);
+        int[] nums = new int[] { 10, 20, 50, 30, 80 };
 
-        while(true) {
-            System.out.println("계속 추가하시겠습니까? y/n");
-            String yesOrNo = scanner.nextLine();
+        while (true) {
+            System.out.println("현재 배열: " + Arrays.toString(nums));
+            System.out.println("삭제할 값 입력: ");
+            int num = scanner.nextInt();
 
-            if (yesOrNo.equalsIgnoreCase("y")) {
-                System.out.println("입력: ");
-                int inputNum = Integer.parseInt(scanner.nextLine());
-
-                int[] newNums = new int[nums.length - 1];
-                for (int i = 0; i < nums.length; i++) {
-                    newNums[i] = nums[i];
-                }
-
-                newNums[newNums.length - 1] = inputNum;
-                nums = newNums;
-
-            } else if (yesOrNo.equalsIgnoreCase("n")) {
-                break;
-
-            } else {
-                System.out.println("다시 입력하세요.");
-            }
-
-            System.out.println("입력된 배열" + Arrays.toString(nums));
-
-            int sum = 0;
+            int foundIndex = -1;
             for (int i = 0; i < nums.length; i++) {
-                sum = sum + nums[i];
+                if (nums[i] == num) {
+                    foundIndex = i;
+                    break;
+                }
             }
 
-            System.out.println("총합: " + sum);
+            if (foundIndex == -1) {
+                System.out.println("해당 값은 배열에 존재하지 않습니다.");
+                continue;
+            }
+
+            int[] newNums = new int[nums.length - 1];
+            for (int i = 0; i < newNums.length; i++) {
+                newNums[i] = nums[i < foundIndex ? i : i + 1];
+            }
+            nums = newNums;
         }
-
-
     }
 }
+
 
 
 
