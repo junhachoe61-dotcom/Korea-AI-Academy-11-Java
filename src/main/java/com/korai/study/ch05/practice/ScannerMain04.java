@@ -21,6 +21,7 @@ public class ScannerMain04 {
                 }
             }
 
+
             if (foundIndex == -1) {
                 System.out.println("해당 값은 배열에 존재하지 않습니다.");
                 continue;
