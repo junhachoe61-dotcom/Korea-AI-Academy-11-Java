@@ -1,6 +1,5 @@
 package com.korai.study.ch05.practice;
 
-import com.korai.study.ch03.access.User;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
